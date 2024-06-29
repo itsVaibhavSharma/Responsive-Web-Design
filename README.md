@@ -1,0 +1,2 @@
+# Responsive-Web-Design
+ This repository contains a series of web development projects demonstrating fundamental and advanced techniques in HTML and CSS. Explore building a cat photo app to grasp the basics, create a penguin to understand CSS variables, and develop a quiz site with a focus on accessibility. Additionally, learn responsive design by constructing a photo gallery with Flexbox and crafting a magazine article layout using CSS Grid.
