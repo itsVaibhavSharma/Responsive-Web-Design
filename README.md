@@ -372,7 +372,7 @@ All pages should begin with `<!DOCTYPE html>`. This special string is known as 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta>
+		<meta charset = "utf-8">
 		<title></title>
 	</head>
 	<body>
