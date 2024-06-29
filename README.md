@@ -384,3 +384,261 @@ All pages should begin with `<!DOCTYPE html>`. This special string is known as 
 </html
 ```
 
+# CSS (Cascading Style Sheet)
+Up until now, you have been limited regarding the presentation and appearance of the content you create.
+
+```html
+<head>
+	<style>
+	</style>
+</head>
+```
+
+You can add style to an element by specifying it in the `style` element and setting a property for it like this:
+
+```css
+element {
+ property: value;
+}
+```
+
+#### Type selector and Center Align
+```html
+ <style>
+      h1 {
+        text-align : center;
+      }
+    </style>
+```
+
+You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by creating a list of selectors. Each selector is separated with commas like this:
+
+Example Code
+
+```css
+selector1, selector2 {
+  property: value;
+}
+```
+
+### Separate CSS file
+Instead of writing the css code in the same file, it is better to create a different CSS file for styling.
+Lets create a styles.css.
+
+Make sure to exclude the opening and closing `style` tags.
+
+Now you need to link the `styles.css` file, so the styles will be applied again. Inside the `head` element, add a `link` element. Give it a `rel` attribute with the value of `"stylesheet"` and a `href` attribute with the value of `"styles.css"`.
+
+```html
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+```
+
+For the styling of the page to look similar on mobile as it does on a desktop or laptop, you need to add a `meta` element with a special `content` attribute.
+
+Add the following within the `head` element:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+### Properties
+```CSS
+background-color: brown;
+width: 300px; /*fixed */
+width: 80%; /*80% of the entire screen*/
+max-width: 500px;
+
+text-align: left / center / right;
+
+/*center horizontally*/
+margin-left : auto;
+margin-right: auto;
+
+/*Background image*/
+background-image : url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+
+/*Making an element inline*/
+display : inline-block;
+
+/*making an element behave as block*/
+display: block;
+
+/*padding*/
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+padding-bottom: 20px;
+/*or only below for padding all side*/
+padding: 20px;
+
+/*Font*/
+font-family: sans-serif | Impact (for headings) ;
+
+/*You can add a fallback value for the font-family by adding another font name separated by a comma. Fallbacks are used in instances where the initial is not found/available.*/
+font-family: Impact, serif;
+
+/* Style */
+font-style: italic;
+
+font-size: 40px; 
+
+/* For hr elements*/
+height: 2px;
+background-color: brown;
+border-color: brown;
+
+/* To reduce top margin, There is an easier way, simply add a negative top margin to the `img` elements to pull them up from their current positions. Negative values are created using a `-` in front of the value.*/
+margin-top: -25px;
+
+```
+
+
+#### Div
+The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far.
+
+```html
+<div>
+</div>
+```
+The goal now is to make the `div` not take up the entire width of the page. The CSS `width` property is perfect for this.
+
+You can use the `id` selector to target a specific element with an `id` attribute. An `id` selector is defined by placing the hash symbol `#` directly in front of the element's `id` value. For example, if an element has the `id` of `cat` then you would target that element like this:
+
+```css
+#cat {
+  width: 250px;
+}
+```
+
+#### Comment
+Comments in CSS look like this:
+
+```css
+/* comment here */
+```
+
+
+#### Margin
+Next, you want to center the `#menu` horizontally. You can do this by setting its `margin-left` and `margin-right` properties to `auto`. Think of the margin as invisible space around an element.
+
+```css
+margin-left : auto;
+margin-right: auto;
+```
+
+#### Class Selector
+So far you have been using type and id selectors to style elements. However, it is more common to use a different selector to style your elements.
+
+A class selector is defined by a name with a dot directly in front of it, like this:
+
+Example Code
+```html
+<div class = "class-name"></div>
+```
+
+```css
+.class-name {
+  styles
+}
+```
+
+#### Article
+`article` elements commonly contain multiple elements that have related information.
+```html
+<article>
+</article>
+```
+
+#### Styling Nested elements
+The `p` elements are nested in an `article` element with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+
+Example Code
+
+```css
+.item p { }
+```
+
+#### Making inline
+ Instead, use the back space key on your keyboard to move the `p` element with the class `price` next to the `p` element with the class `flavor` so that they are on the same line in the editor. Make sure there is no space between the two elements.
+ ```html
+ <article class="item">
+	<p class="flavor">French Vanilla</p><p class="price">3.00</p>
+ </article>
+```
+
+```css
+.item p {
+  display: inline-block;
+}
+  
+.flavor {
+  text-align: left;
+  width: 50%;
+}
+  
+.price {
+  text-align: right;
+  width: 50%;
+}
+```
+
+#### hr element
+You can use an `hr` element to display a divider between sections of different content.
+Note that `hr` elements are self closing.
+```html
+<hr>
+```
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
+
+```css
+hr {
+  height: 3px;
+}
+```
+
+Notice the grey color along the edges of the line. Those edges are known as borders. Each side of an element can have a different color or they can all be the same.
+
+Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the border to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+
+```css
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown;
+}
+```
+
+#### Styling link elements
+The default color of a link that has not yet been clicked on is typically blue. The default color of a link that has already been visited from a page is typically purple.
+
+To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
+```css
+a {
+  color: black;
+}
+```
+
+You change properties of a link when the link has actually been visited by using a pseudo-selector that looks like `a:visited { propertyName: propertyValue; }`.
+```css
+a:visited {
+  color: grey;
+}
+```
+
+You change properties of a link when the mouse hovers over them by using a pseudo-selector that looks like `a:hover { propertyName: propertyValue; }`.
+```css
+a:hover {
+  color: brown;
+}
+```
+
+You change properties of a link when the link is actually being clicked by using a pseudo-selector that looks like `a:active { propertyName: propertyValue; }`.
+```css
+a:active{
+  color: white;
+}
+```
